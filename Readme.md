@@ -83,6 +83,11 @@ CLUSTERDNS_IP=10.0.0.10    # virtual IP of the kube-dns service
 DOMAIN=example.local       # top level domain for the kube-dns plugin
 ```
 
+##Testing from host
+route add 10.0.0.0 mask 255.255.255.0 10.10.0.2
+dashboard will be accessible via
+http://10.10.0.2:8080/api/v1/namespaces/kube-system/services/dashboard/proxy/#!/service?namespace=default
+
 ## Packaging the box
 We use make to package the box automatically. The following targets are available:
 
